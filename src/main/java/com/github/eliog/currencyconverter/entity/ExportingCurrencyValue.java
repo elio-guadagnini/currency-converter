@@ -67,8 +67,8 @@ public class ExportingCurrencyValue {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("CurrencyValue{");
-        sb.append("id=").append(id);
+        final StringBuilder sb = new StringBuilder();
+        sb.append("CurrencyValue{id=").append(id);
         sb.append(", first_currency='").append(first_currency);
         sb.append(", second_currency=").append(second_currency);
         sb.append(", exchange_value=").append(exchange_value);

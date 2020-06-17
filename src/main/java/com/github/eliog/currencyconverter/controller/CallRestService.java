@@ -15,10 +15,14 @@ public class CallRestService {
 
     @Scheduled(fixedRate = 10000)
     private static void callRestService() {
-        String url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=BTC,USD,EUR&api_key=aea23d02ccc29f1fbffb4d7ab65d41f8e32fc88bc3fa0fbecb35a4afc280a251";
+        try {
+            String url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=BTC,USD,EUR&api_key=aea23d02ccc29f1fbffb4d7ab65d41f8e32fc88bc3fa0fbecb35a4afc280a251";
 
-        RestTemplate restTemplate = new RestTemplate();
-        IncomingCurrencyValue incomingCurrencyValue = restTemplate.getForObject(url, IncomingCurrencyValue.class);
-        log.info("second attempt: " + incomingCurrencyValue.toString());
+            RestTemplate restTemplate = new RestTemplate();
+            IncomingCurrencyValue incomingCurrencyValue = restTemplate.getForObject(url, IncomingCurrencyValue.class);
+            log.info("second attempt: " + incomingCurrencyValue.toString());
+        } catch(NullPointerException e) {
+            log.info("Unexpected Error consuming the RESTful service");
+        }
     }
 }

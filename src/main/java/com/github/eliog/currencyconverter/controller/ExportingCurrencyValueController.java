@@ -21,7 +21,7 @@ public class ExportingCurrencyValueController {
     @GetMapping("/showValues")
     public List<ExportingCurrencyValue> findValues() {
         try {
-            return (List<ExportingCurrencyValue>) valueRepository.findAll();
+            return valueRepository.findAll();
         } catch (Exception e) {
             throw new ResourceNotFoundException("Error in retrieving data from db");
         }
