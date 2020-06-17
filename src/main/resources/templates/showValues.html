@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Values</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <h2>List of values</h2>
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>First incomingCurrencyValue</th>
+                <th>Second incomingCurrencyValue</th>
+                <th>Exchange value</th>
+            </tr>
+
+            <tr th:each="value : ${values}">
+                <td th:text="${value.id}">Id</td>
+                <td th:text="${value.first_currency}">First incomingCurrencyValue</td>
+                <td th:text="${value.second_currency}">Second incomingCurrencyValue</td>
+                <td th:text="${value.exchange_value}">Exchange value</td>
+            </tr>
+        </table>
+
+    </body>
+</html>
