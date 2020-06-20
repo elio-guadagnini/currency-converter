@@ -1,0 +1,32 @@
+<!-- I'm not using this -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Values</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+    <body>
+        <h2>List of values</h2>
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>First Currency</th>
+                <th>Second Currency</th>
+                <th>Exchange value</th>
+                <th>Exchange value</th>
+                <th>Exchange value</th>
+            </tr>
+
+            <tr th:each="account : ${accounts}">
+                <td th:text="${account.user_id}">Id</td>
+                <td th:text="${account.username}">First Currency</td>
+                <td th:text="${account.password}">Second Currency</td>
+                <td th:text="${account.created_on}">Exchange value</td>
+                <td th:text="${account.last_login}">Exchange value</td>
+            </tr>
+        </table>
+    </body>
+</html>
