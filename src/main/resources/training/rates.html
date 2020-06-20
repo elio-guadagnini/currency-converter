@@ -1,3 +1,4 @@
+<!-- I'm not using this -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
@@ -12,18 +13,17 @@
         <table>
             <tr>
                 <th>Id</th>
-                <th>First incomingCurrencyValue</th>
-                <th>Second incomingCurrencyValue</th>
+                <th>First Currency</th>
+                <th>Second Currency</th>
                 <th>Exchange value</th>
             </tr>
 
             <tr th:each="value : ${values}">
                 <td th:text="${value.id}">Id</td>
-                <td th:text="${value.first_currency}">First incomingCurrencyValue</td>
-                <td th:text="${value.second_currency}">Second incomingCurrencyValue</td>
+                <td th:text="${value.first_currency}">First Currency</td>
+                <td th:text="${value.second_currency}">Second Currency</td>
                 <td th:text="${value.exchange_value}">Exchange value</td>
             </tr>
         </table>
-
     </body>
 </html>

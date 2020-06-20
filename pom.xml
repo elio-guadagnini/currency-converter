@@ -19,6 +19,21 @@
 	</properties>
 
 	<dependencies>
+		<!--	for web services	-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<!--	for authenticating the user to get access to the conversion service	-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!--	to consume a RESTful web service	-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

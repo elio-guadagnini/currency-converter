@@ -1,11 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
     <head>
         <title>Home page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <a href="showValues">Show values</a>
+        <p><a href="rates">Show rates</a></p>
+
+        <p>Click <a th:href="@{/conversion}">here</a> to load conversion service.</p>
+
+        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+
+<!--        <form action="conversion">-->
+<!--            <table>-->
+<!--                <thead></thead>-->
+<!--                <tbody>-->
+<!--                <tr>-->
+<!--                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+<!--                    <td>-->
+<!--                        From:-->
+<!--                    </td>-->
+<!--                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+<!--                    <td>-->
+<!--                        <input type="radio" id="btc1" name="first_currency" value="btc">-->
+<!--                        <label for="btc1">btc</label><br>-->
+<!--                        <input type="radio" id="usd1" name="first_currency" value="usd">-->
+<!--                        <label for="usd1">usd</label><br>-->
+<!--                        <input type="radio" id="eur1" name="first_currency" value="eur">-->
+<!--                        <label for="eur1">eur</label>-->
+<!--                    </td>-->
+<!--                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+<!--                    <td>-->
+<!--                        To:-->
+<!--                    </td>-->
+<!--                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+<!--                    <td>-->
+<!--                        <input type="radio" id="btc2" name="second_currency" value="btc">-->
+<!--                        <label for="btc2">btc</label><br>-->
+<!--                        <input type="radio" id="usd2" name="second_currency" value="usd">-->
+<!--                        <label for="usd2">usd</label><br>-->
+<!--                        <input type="radio" id="eur2" name="second_currency" value="eur">-->
+<!--                        <label for="eur2">eur</label><br>-->
+<!--                    </td>-->
+<!--                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+<!--                    <td>-->
+<!--                        <label for="amount">Amount:</label>-->
+<!--                        <input type="text" id="amount" name="amount">-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+<!--                    <td>-->
+<!--                        <input type="submit" value="Submit">-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </form>-->
+
+        <!--   here the post request is not handled.     -->
+<!--        <h1>Form</h1>-->
+<!--        <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">-->
+<!--            <p>Id: <input type="text" th:field="*{id}" /></p>-->
+<!--            <p>Message: <input type="text" th:field="*{content}" /></p>-->
+<!--            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>-->
+<!--        </form>-->
     </body>
 </html>

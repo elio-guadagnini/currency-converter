@@ -1,16 +1,16 @@
-package com.github.eliog.currencyconverter.entity;
+package com.github.eliog.currencyconverter.jsonentity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class IncomingCurrencyValue {
+public class ExchangeRates {
 
     private double btc;
     private double usd;
     private double eur;
 
-    public IncomingCurrencyValue() {
+    public ExchangeRates() {
     }
 
     @JsonProperty("BTC")

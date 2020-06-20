@@ -19,7 +19,7 @@ import java.util.Arrays;
 @SpringBootApplication
 @EnableScheduling
 // to make spring check the components
-@ComponentScan("com.github.eliog.currencyconverter.controller")
+@ComponentScan({"com.github.eliog.currencyconverter.controller", "com.github.eliog.currencyconverter.security"})
 // to enable jpa auditing
 //@EnableJpaAuditing
 public class CurrencyConverterApplication {
