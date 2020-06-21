@@ -1,5 +1,8 @@
 package com.github.eliog.currencyconverter.conversion;
 
+import lombok.Data;
+
+@Data
 public class ConversionRates {
 
     private double btc;
@@ -24,30 +27,6 @@ public class ConversionRates {
         eurToBtc = 1/eur;
         usdToEur = calculateUsdToEur();
         eurToUsd = calculateEurToUsd();
-    }
-
-    public double getBtcToUsd() {
-        return btcToUsd;
-    }
-
-    public double getUsdToBtc() {
-        return usdToBtc;
-    }
-
-    public double getBtcToEur() {
-        return btcToEur;
-    }
-
-    public double getEurToBtc() {
-        return eurToBtc;
-    }
-
-    public double getUsdToEur() {
-        return usdToEur;
-    }
-
-    public double getEurToUsd() {
-        return eurToUsd;
     }
 
     private double calculateUsdToEur() {
