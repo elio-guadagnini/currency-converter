@@ -11,9 +11,7 @@ public class ConvertedValue {
         this.convertedAmount = 0;
     }
 
-    // the name of get function is linked with the final JSON variable name
-
-    public void calculateConversion(double amountToConvert, double conversionRate) {
+    public ConvertedValue(double amountToConvert, double conversionRate){
         convertedAmount = amountToConvert * conversionRate;
     }
 }

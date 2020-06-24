@@ -25,35 +25,40 @@ public class ConversionController {
 
     @PostMapping("/conversion")
     public ResponseEntity<ConvertedValue> conversionSubmit(@ModelAttribute Conversion conversion) {
-        ExchangeRate currency = rateRepository.findById((long) 11)
-                .orElseThrow(() -> new ResourceNotFoundException("Rate not found with this id: " + 11));
-        ConversionRates conversionRates = new ConversionRates(currency.getBtc(), currency.getUsd(), currency.getEur());
+        ExchangeRate currency = rateRepository.findById((long) 1)
+                .orElseThrow(() -> new ResourceNotFoundException("Rate not found with this id: " + 1));
 
-        ConvertedValue conversionValue = new ConvertedValue();
-        switch (conversion.getFirstCurrency().toLowerCase()+conversion.getSecondCurrency().toLowerCase()) {
-            case "btcusd":
-                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getBtcToUsd());
-                break;
-            case "usdbtc":
-                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getUsdToBtc());
-                break;
-            case "btceur":
-                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getBtcToEur());
-                break;
-            case "eurbtc":
-                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getEurToBtc());
-                break;
-            case "usdeur":
-                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getUsdToEur());
-                break;
-            case "eurusd":
-                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getEurToUsd());
-                break;
-            default:
-                System.out.println("None of the provided operations was selected for: "
-                        +conversion.getFirstCurrency()+" "+conversion.getSecondCurrency());
-                break;
-        }
+//        ConversionRates conversionRates = new ConversionRates(currency.getBtc(), currency.getUsd(), currency.getEur());
+//
+//        ConvertedValue conversionValue = new ConvertedValue();
+//        switch (conversion.getFirstCurrency().toLowerCase()+conversion.getSecondCurrency().toLowerCase()) {
+//            case "btcusd":
+//                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getBtcToUsd());
+//                break;
+//            case "usdbtc":
+//                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getUsdToBtc());
+//                break;
+//            case "btceur":
+//                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getBtcToEur());
+//                break;
+//            case "eurbtc":
+//                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getEurToBtc());
+//                break;
+//            case "usdeur":
+//                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getUsdToEur());
+//                break;
+//            case "eurusd":
+//                conversionValue.calculateConversion(conversion.getAmount(), conversionRates.getEurToUsd());
+//                break;
+//            default:
+//                System.out.println("None of the provided operations was selected for: "
+//                        +conversion.getFirstCurrency()+" "+conversion.getSecondCurrency());
+//                break;
+//        }
+
+            ConversionRates conversionRates = new ConversionRates(currency.getBtc(), currency.getUsd(), currency.getEur());
+            ConvertedValue conversionValue = new ConvertedValue(conversion.getAmount(),
+                    conversionRates.get(conversion.getFirstCurrency().toLowerCase()+conversion.getSecondCurrency().toLowerCase()));
         return ResponseEntity.ok().body(conversionValue);
     }
 }

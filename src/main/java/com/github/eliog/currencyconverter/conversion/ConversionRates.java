@@ -1,39 +1,25 @@
 package com.github.eliog.currencyconverter.conversion;
 
-import lombok.Data;
+import java.util.HashMap;
 
-@Data
 public class ConversionRates {
 
-    private double btc;
-    private double usd;
-    private double eur;
-
-    private double btcToUsd;
-    private double usdToBtc;
-    private double btcToEur;
-    private double eurToBtc;
-    private double usdToEur;
-    private double eurToUsd;
+    private final HashMap<String, Double> conversionRates = new HashMap<>();
 
     public ConversionRates(double btc, double usd, double eur) {
-        this.btc = btc;
-        this.usd = usd;
-        this.eur = eur;
-
-        btcToUsd = usd;
-        usdToBtc = 1/usd;
-        btcToEur = eur;
-        eurToBtc = 1/eur;
-        usdToEur = calculateUsdToEur();
-        eurToUsd = calculateEurToUsd();
+        conversionRates.put("btcusd", usd);
+        conversionRates.put("usdbtc", 1/usd);
+        conversionRates.put("btceur", eur);
+        conversionRates.put("eurbtc", 1/eur);
+        conversionRates.put("usdeur", eur/usd);
+        conversionRates.put("eurusd", usd/eur);
     }
 
-    private double calculateUsdToEur() {
-        return usdToBtc * btcToEur;
+    public void add(String key, Double value) {
+        conversionRates.put(key, value);
     }
 
-    private double calculateEurToUsd() {
-        return btcToUsd * eurToBtc;
+    public Double get(String key) {
+        return conversionRates.get(key);
     }
 }

@@ -1,4 +1,4 @@
-package com.github.eliog.currencyconverter.controller;
+package com.github.eliog.currencyconverter.config;
 
 import com.github.eliog.currencyconverter.controller.CustomUserDetailService;
 import com.github.eliog.currencyconverter.dao.AccountRepository;

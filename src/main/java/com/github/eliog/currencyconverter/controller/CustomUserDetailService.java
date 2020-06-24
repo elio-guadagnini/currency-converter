@@ -20,9 +20,9 @@ public class CustomUserDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) {
         Account acc = accountRepository.findByUsername(username);
 
-        // if I increase here, it gets much longer
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(6);
-        acc.setPassword(encoder.encode(acc.getPassword()));
+        // if I increase here, it gets much longer, no needed if I encoded the password in the db
+//        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(6);
+//        acc.setPassword(encoder.encode(acc.getPassword()));
 
         if (acc == null) {
             throw new ResourceNotFoundException("Username not found: "+username);

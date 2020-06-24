@@ -27,9 +27,9 @@ public class CallRestService {
 //        log.info("second attempt: " + incomingCurrencyValue.toString());
 
         try {
-            firstService.updateCurrencyRate((long) 11, incomingCurrencyValue);
+            firstService.updateCurrencyRate((long) 1, incomingCurrencyValue);
         } catch(ResourceNotFoundException e) {
-            firstService.addCurrencyRate((long) 11, incomingCurrencyValue);
+            firstService.addCurrencyRate((long) 1, incomingCurrencyValue);
         }
     }
 }
