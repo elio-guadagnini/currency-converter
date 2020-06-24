@@ -20,6 +20,8 @@ public class ConversionRates {
     }
 
     public Double get(String key) {
-        return conversionRates.get(key);
+        if(conversionRates.containsKey(key))
+            return conversionRates.get(key);
+        return 0.0;
     }
 }

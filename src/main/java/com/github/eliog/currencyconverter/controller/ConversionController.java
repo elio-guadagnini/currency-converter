@@ -58,7 +58,7 @@ public class ConversionController {
 
             ConversionRates conversionRates = new ConversionRates(currency.getBtc(), currency.getUsd(), currency.getEur());
             ConvertedValue conversionValue = new ConvertedValue(conversion.getAmount(),
-                    conversionRates.get(conversion.getFirstCurrency().toLowerCase()+conversion.getSecondCurrency().toLowerCase()));
+                    conversionRates.get(conversion.getFirstCurrency().toLowerCase() + conversion.getSecondCurrency().toLowerCase()));
         return ResponseEntity.ok().body(conversionValue);
     }
 }
