@@ -38,7 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
-        System.out.println("or here?");
         UserDetails user =
                 User.withDefaultPasswordEncoder()
                         .username("elio")

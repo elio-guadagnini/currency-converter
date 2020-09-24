@@ -25,6 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // I need to define the Encryption method
     @Bean
     public PasswordEncoder passwordEncoder() {
+    	System.out.print(encoder.encode("exmachina"));
         return new BCryptPasswordEncoder();
     }
 }
